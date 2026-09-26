@@ -1,0 +1,2581 @@
+{
+  "title": "Oath of the Rose",
+  "rows": [
+    {
+      "id": "loc-altair",
+      "kind": "area",
+      "name": "altair",
+      "origin": "source",
+      "implementationId": "altair"
+    },
+    {
+      "id": "loc-gatrea",
+      "kind": "area",
+      "name": "gatrea",
+      "origin": "source",
+      "implementationId": "gatrea"
+    },
+    {
+      "id": "loc-paloom",
+      "kind": "area",
+      "name": "paloom",
+      "origin": "source",
+      "implementationId": "paloom"
+    },
+    {
+      "id": "loc-poft",
+      "kind": "area",
+      "name": "poft",
+      "origin": "source",
+      "implementationId": "poft"
+    },
+    {
+      "id": "loc-salamand",
+      "kind": "area",
+      "name": "salamand",
+      "origin": "source",
+      "implementationId": "salamand"
+    },
+    {
+      "id": "loc-bafsk",
+      "kind": "area",
+      "name": "bafsk",
+      "origin": "source",
+      "implementationId": "bafsk"
+    },
+    {
+      "id": "loc-fynn",
+      "kind": "area",
+      "name": "fynn",
+      "origin": "source",
+      "implementationId": "fynn"
+    },
+    {
+      "id": "loc-mysidia",
+      "kind": "area",
+      "name": "mysidia",
+      "origin": "source",
+      "implementationId": "mysidia"
+    },
+    {
+      "id": "loc-chocobo-forest",
+      "kind": "area",
+      "name": "chocobo-forest",
+      "origin": "source",
+      "implementationId": "chocobo-forest"
+    },
+    {
+      "id": "loc-castle-fynn",
+      "kind": "area",
+      "name": "castle-fynn",
+      "origin": "source",
+      "implementationId": "castle-fynn"
+    },
+    {
+      "id": "loc-semitt-falls",
+      "kind": "area",
+      "name": "semitt-falls",
+      "origin": "source",
+      "implementationId": "semitt-falls"
+    },
+    {
+      "id": "loc-bafsk-cave",
+      "kind": "area",
+      "name": "bafsk-cave",
+      "origin": "source",
+      "implementationId": "bafsk-cave"
+    },
+    {
+      "id": "loc-snow-cavern",
+      "kind": "area",
+      "name": "snow-cavern",
+      "origin": "source",
+      "implementationId": "snow-cavern"
+    },
+    {
+      "id": "loc-kashuan-keep",
+      "kind": "area",
+      "name": "kashuan-keep",
+      "origin": "source",
+      "implementationId": "kashuan-keep"
+    },
+    {
+      "id": "loc-dreadnought",
+      "kind": "area",
+      "name": "dreadnought",
+      "origin": "source",
+      "implementationId": "dreadnought"
+    },
+    {
+      "id": "loc-castle-deist",
+      "kind": "area",
+      "name": "castle-deist",
+      "origin": "source",
+      "implementationId": "castle-deist"
+    },
+    {
+      "id": "loc-deist-cavern",
+      "kind": "area",
+      "name": "deist-cavern",
+      "origin": "source",
+      "implementationId": "deist-cavern"
+    },
+    {
+      "id": "loc-coliseum",
+      "kind": "area",
+      "name": "coliseum",
+      "origin": "source",
+      "implementationId": "coliseum"
+    },
+    {
+      "id": "loc-tropical-island",
+      "kind": "area",
+      "name": "tropical-island",
+      "origin": "source",
+      "implementationId": "tropical-island"
+    },
+    {
+      "id": "loc-leviathan",
+      "kind": "area",
+      "name": "leviathan",
+      "origin": "source",
+      "implementationId": "leviathan"
+    },
+    {
+      "id": "loc-cave-of-mysidia",
+      "kind": "area",
+      "name": "cave-of-mysidia",
+      "origin": "source",
+      "implementationId": "cave-of-mysidia"
+    },
+    {
+      "id": "loc-mysidian-tower",
+      "kind": "area",
+      "name": "mysidian-tower",
+      "origin": "source",
+      "implementationId": "mysidian-tower"
+    },
+    {
+      "id": "loc-cyclone",
+      "kind": "area",
+      "name": "cyclone",
+      "origin": "source",
+      "implementationId": "cyclone"
+    },
+    {
+      "id": "loc-castle-palamecia",
+      "kind": "area",
+      "name": "castle-palamecia",
+      "origin": "source",
+      "implementationId": "castle-palamecia"
+    },
+    {
+      "id": "loc-jade-passage",
+      "kind": "area",
+      "name": "jade-passage",
+      "origin": "source",
+      "implementationId": "jade-passage"
+    },
+    {
+      "id": "loc-pandaemonium",
+      "kind": "area",
+      "name": "pandaemonium",
+      "origin": "source",
+      "implementationId": "pandaemonium"
+    },
+    {
+      "id": "loc-heron-glade",
+      "kind": "area",
+      "name": "Heron Glade",
+      "origin": "addition",
+      "implementationId": "heron-glade"
+    },
+    {
+      "id": "beat-opening-rescue",
+      "kind": "story",
+      "name": "opening-rescue",
+      "origin": "source",
+      "implementationId": "opening-rescue"
+    },
+    {
+      "id": "beat-wild-rose",
+      "kind": "story",
+      "name": "wild-rose",
+      "origin": "source",
+      "implementationId": "wild-rose"
+    },
+    {
+      "id": "beat-scott-dies",
+      "kind": "story",
+      "name": "scott-dies",
+      "origin": "source",
+      "implementationId": "scott-dies"
+    },
+    {
+      "id": "beat-minwu-joins",
+      "kind": "story",
+      "name": "minwu-joins",
+      "origin": "source",
+      "implementationId": "minwu-joins"
+    },
+    {
+      "id": "beat-nelly-freed",
+      "kind": "story",
+      "name": "nelly-freed",
+      "origin": "source",
+      "implementationId": "nelly-freed"
+    },
+    {
+      "id": "beat-mythril-arms",
+      "kind": "story",
+      "name": "mythril-arms",
+      "origin": "source",
+      "implementationId": "mythril-arms"
+    },
+    {
+      "id": "beat-paul-mythril",
+      "kind": "story",
+      "name": "paul-mythril",
+      "origin": "source",
+      "implementationId": "paul-mythril"
+    },
+    {
+      "id": "beat-josef-joins",
+      "kind": "story",
+      "name": "josef-joins",
+      "origin": "source",
+      "implementationId": "josef-joins"
+    },
+    {
+      "id": "beat-josef-dies",
+      "kind": "story",
+      "name": "josef-dies",
+      "origin": "source",
+      "implementationId": "josef-dies"
+    },
+    {
+      "id": "beat-borghen",
+      "kind": "story",
+      "name": "borghen",
+      "origin": "source",
+      "implementationId": "borghen"
+    },
+    {
+      "id": "beat-goddess-bell",
+      "kind": "story",
+      "name": "goddess-bell",
+      "origin": "source",
+      "implementationId": "goddess-bell"
+    },
+    {
+      "id": "beat-kashuan-open",
+      "kind": "story",
+      "name": "kashuan-open",
+      "origin": "source",
+      "implementationId": "kashuan-open"
+    },
+    {
+      "id": "beat-sunfire",
+      "kind": "story",
+      "name": "sunfire",
+      "origin": "source",
+      "implementationId": "sunfire"
+    },
+    {
+      "id": "beat-dreadnought",
+      "kind": "story",
+      "name": "dreadnought",
+      "origin": "source",
+      "implementationId": "dreadnought"
+    },
+    {
+      "id": "beat-dark-knight",
+      "kind": "story",
+      "name": "dark-knight",
+      "origin": "source",
+      "implementationId": "dark-knight"
+    },
+    {
+      "id": "beat-leila",
+      "kind": "story",
+      "name": "leila",
+      "origin": "source",
+      "implementationId": "leila"
+    },
+    {
+      "id": "beat-leviathan",
+      "kind": "story",
+      "name": "leviathan",
+      "origin": "source",
+      "implementationId": "leviathan"
+    },
+    {
+      "id": "beat-gordon",
+      "kind": "story",
+      "name": "gordon",
+      "origin": "source",
+      "implementationId": "gordon"
+    },
+    {
+      "id": "beat-lamia-queen",
+      "kind": "story",
+      "name": "lamia-queen",
+      "origin": "source",
+      "implementationId": "lamia-queen"
+    },
+    {
+      "id": "beat-hilda-rescued",
+      "kind": "story",
+      "name": "hilda-rescued",
+      "origin": "source",
+      "implementationId": "hilda-rescued"
+    },
+    {
+      "id": "beat-fynn-liberated",
+      "kind": "story",
+      "name": "fynn-liberated",
+      "origin": "source",
+      "implementationId": "fynn-liberated"
+    },
+    {
+      "id": "beat-deist-wyvern",
+      "kind": "story",
+      "name": "deist-wyvern",
+      "origin": "source",
+      "implementationId": "deist-wyvern"
+    },
+    {
+      "id": "beat-ricard-joins",
+      "kind": "story",
+      "name": "ricard-joins",
+      "origin": "source",
+      "implementationId": "ricard-joins"
+    },
+    {
+      "id": "beat-ricard-dies",
+      "kind": "story",
+      "name": "ricard-dies",
+      "origin": "source",
+      "implementationId": "ricard-dies"
+    },
+    {
+      "id": "beat-minwu-dies",
+      "kind": "story",
+      "name": "minwu-dies",
+      "origin": "source",
+      "implementationId": "minwu-dies"
+    },
+    {
+      "id": "beat-ultima",
+      "kind": "story",
+      "name": "ultima",
+      "origin": "source",
+      "implementationId": "ultima"
+    },
+    {
+      "id": "beat-cyclone",
+      "kind": "story",
+      "name": "cyclone",
+      "origin": "source",
+      "implementationId": "cyclone"
+    },
+    {
+      "id": "beat-emperor-palamecia",
+      "kind": "story",
+      "name": "emperor-palamecia",
+      "origin": "source",
+      "implementationId": "emperor-palamecia"
+    },
+    {
+      "id": "beat-jade",
+      "kind": "story",
+      "name": "jade",
+      "origin": "source",
+      "implementationId": "jade"
+    },
+    {
+      "id": "beat-emperor-pandaemonium",
+      "kind": "story",
+      "name": "emperor-pandaemonium",
+      "origin": "source",
+      "implementationId": "emperor-pandaemonium"
+    },
+    {
+      "id": "beat-ending-leon",
+      "kind": "story",
+      "name": "ending-leon",
+      "origin": "source",
+      "implementationId": "ending-leon"
+    },
+    {
+      "id": "beat-paul-infiltration",
+      "kind": "story",
+      "name": "paul-infiltration",
+      "origin": "source",
+      "implementationId": "paul-infiltration"
+    },
+    {
+      "id": "beat-chocobo",
+      "kind": "story",
+      "name": "chocobo",
+      "origin": "source",
+      "implementationId": "chocobo"
+    },
+    {
+      "id": "beat-gatrea-courier",
+      "kind": "story",
+      "name": "gatrea-courier",
+      "origin": "addition",
+      "implementationId": "gatrea-courier"
+    },
+    {
+      "id": "term-wild-rose",
+      "kind": "keyword",
+      "name": "wild-rose",
+      "origin": "source",
+      "implementationId": "wild-rose"
+    },
+    {
+      "id": "term-mythril",
+      "kind": "keyword",
+      "name": "mythril",
+      "origin": "source",
+      "implementationId": "mythril"
+    },
+    {
+      "id": "term-dreadnought",
+      "kind": "keyword",
+      "name": "dreadnought",
+      "origin": "source",
+      "implementationId": "dreadnought"
+    },
+    {
+      "id": "term-airship",
+      "kind": "keyword",
+      "name": "airship",
+      "origin": "source",
+      "implementationId": "airship"
+    },
+    {
+      "id": "term-sunfire",
+      "kind": "keyword",
+      "name": "sunfire",
+      "origin": "source",
+      "implementationId": "sunfire"
+    },
+    {
+      "id": "term-goddess-bell",
+      "kind": "keyword",
+      "name": "goddess-bell",
+      "origin": "source",
+      "implementationId": "goddess-bell"
+    },
+    {
+      "id": "term-dragoons",
+      "kind": "keyword",
+      "name": "dragoons",
+      "origin": "source",
+      "implementationId": "dragoons"
+    },
+    {
+      "id": "term-wyverns",
+      "kind": "keyword",
+      "name": "wyverns",
+      "origin": "source",
+      "implementationId": "wyverns"
+    },
+    {
+      "id": "term-mysidia",
+      "kind": "keyword",
+      "name": "mysidia",
+      "origin": "source",
+      "implementationId": "mysidia"
+    },
+    {
+      "id": "term-mask",
+      "kind": "keyword",
+      "name": "mask",
+      "origin": "source",
+      "implementationId": "mask"
+    },
+    {
+      "id": "term-ekmet-teloess",
+      "kind": "keyword",
+      "name": "ekmet-teloess",
+      "origin": "source",
+      "implementationId": "ekmet-teloess"
+    },
+    {
+      "id": "term-cyclone",
+      "kind": "keyword",
+      "name": "cyclone",
+      "origin": "source",
+      "implementationId": "cyclone"
+    },
+    {
+      "id": "term-palamecia",
+      "kind": "keyword",
+      "name": "palamecia",
+      "origin": "source",
+      "implementationId": "palamecia"
+    },
+    {
+      "id": "term-ultima-tome",
+      "kind": "keyword",
+      "name": "ultima-tome",
+      "origin": "source",
+      "implementationId": "ultima-tome"
+    },
+    {
+      "id": "term-jade-passage",
+      "kind": "keyword",
+      "name": "jade-passage",
+      "origin": "source",
+      "implementationId": "jade-passage"
+    },
+    {
+      "id": "spell-cure",
+      "kind": "spell",
+      "name": "Cure",
+      "origin": "source",
+      "implementationId": "cure"
+    },
+    {
+      "id": "spell-life",
+      "kind": "spell",
+      "name": "Life",
+      "origin": "source",
+      "implementationId": "life"
+    },
+    {
+      "id": "spell-basuna",
+      "kind": "spell",
+      "name": "Basuna",
+      "origin": "source",
+      "implementationId": "basuna"
+    },
+    {
+      "id": "spell-esuna",
+      "kind": "spell",
+      "name": "Esuna",
+      "origin": "source",
+      "implementationId": "esuna"
+    },
+    {
+      "id": "spell-blink",
+      "kind": "spell",
+      "name": "Blink",
+      "origin": "source",
+      "implementationId": "blink"
+    },
+    {
+      "id": "spell-protect",
+      "kind": "spell",
+      "name": "Protect",
+      "origin": "source",
+      "implementationId": "protect"
+    },
+    {
+      "id": "spell-shell",
+      "kind": "spell",
+      "name": "Shell",
+      "origin": "source",
+      "implementationId": "shell"
+    },
+    {
+      "id": "spell-barrier",
+      "kind": "spell",
+      "name": "Barrier",
+      "origin": "source",
+      "implementationId": "barrier"
+    },
+    {
+      "id": "spell-wall",
+      "kind": "spell",
+      "name": "Wall",
+      "origin": "source",
+      "implementationId": "wall"
+    },
+    {
+      "id": "spell-silence",
+      "kind": "spell",
+      "name": "Silence",
+      "origin": "source",
+      "implementationId": "silence"
+    },
+    {
+      "id": "spell-mini",
+      "kind": "spell",
+      "name": "Mini",
+      "origin": "source",
+      "implementationId": "mini"
+    },
+    {
+      "id": "spell-fog",
+      "kind": "spell",
+      "name": "Fog",
+      "origin": "source",
+      "implementationId": "fog"
+    },
+    {
+      "id": "spell-dispel",
+      "kind": "spell",
+      "name": "Dispel",
+      "origin": "source",
+      "implementationId": "dispel"
+    },
+    {
+      "id": "spell-slow",
+      "kind": "spell",
+      "name": "Slow",
+      "origin": "source",
+      "implementationId": "slow"
+    },
+    {
+      "id": "spell-sap",
+      "kind": "spell",
+      "name": "Sap",
+      "origin": "source",
+      "implementationId": "sap"
+    },
+    {
+      "id": "spell-fear",
+      "kind": "spell",
+      "name": "Fear",
+      "origin": "source",
+      "implementationId": "fear"
+    },
+    {
+      "id": "spell-teleport",
+      "kind": "spell",
+      "name": "Teleport",
+      "origin": "source",
+      "implementationId": "teleport"
+    },
+    {
+      "id": "spell-holy",
+      "kind": "spell",
+      "name": "Holy",
+      "origin": "source",
+      "implementationId": "holy"
+    },
+    {
+      "id": "spell-swap",
+      "kind": "spell",
+      "name": "Swap",
+      "origin": "source",
+      "implementationId": "swap"
+    },
+    {
+      "id": "spell-ultima",
+      "kind": "spell",
+      "name": "Ultima",
+      "origin": "source",
+      "implementationId": "ultima"
+    },
+    {
+      "id": "spell-fire",
+      "kind": "spell",
+      "name": "Fire",
+      "origin": "source",
+      "implementationId": "fire"
+    },
+    {
+      "id": "spell-ice",
+      "kind": "spell",
+      "name": "Ice",
+      "origin": "source",
+      "implementationId": "ice"
+    },
+    {
+      "id": "spell-bolt",
+      "kind": "spell",
+      "name": "Bolt",
+      "origin": "source",
+      "implementationId": "bolt"
+    },
+    {
+      "id": "spell-poison",
+      "kind": "spell",
+      "name": "Poison",
+      "origin": "source",
+      "implementationId": "poison"
+    },
+    {
+      "id": "spell-sleep",
+      "kind": "spell",
+      "name": "Sleep",
+      "origin": "source",
+      "implementationId": "sleep"
+    },
+    {
+      "id": "spell-blind",
+      "kind": "spell",
+      "name": "Blind",
+      "origin": "source",
+      "implementationId": "blind"
+    },
+    {
+      "id": "spell-stun",
+      "kind": "spell",
+      "name": "Stun",
+      "origin": "source",
+      "implementationId": "stun"
+    },
+    {
+      "id": "spell-toad",
+      "kind": "spell",
+      "name": "Toad",
+      "origin": "source",
+      "implementationId": "toad"
+    },
+    {
+      "id": "spell-break",
+      "kind": "spell",
+      "name": "Break",
+      "origin": "source",
+      "implementationId": "break"
+    },
+    {
+      "id": "spell-death",
+      "kind": "spell",
+      "name": "Death",
+      "origin": "source",
+      "implementationId": "death"
+    },
+    {
+      "id": "spell-drain",
+      "kind": "spell",
+      "name": "Drain",
+      "origin": "source",
+      "implementationId": "drain"
+    },
+    {
+      "id": "spell-osmose",
+      "kind": "spell",
+      "name": "Osmose",
+      "origin": "source",
+      "implementationId": "osmose"
+    },
+    {
+      "id": "spell-flare",
+      "kind": "spell",
+      "name": "Flare",
+      "origin": "source",
+      "implementationId": "flare"
+    },
+    {
+      "id": "spell-warp",
+      "kind": "spell",
+      "name": "Warp",
+      "origin": "source",
+      "implementationId": "warp"
+    },
+    {
+      "id": "spell-aero",
+      "kind": "spell",
+      "name": "Aero",
+      "origin": "source",
+      "implementationId": "aero"
+    },
+    {
+      "id": "spell-berserk",
+      "kind": "spell",
+      "name": "Berserk",
+      "origin": "source",
+      "implementationId": "berserk"
+    },
+    {
+      "id": "spell-haste",
+      "kind": "spell",
+      "name": "Haste",
+      "origin": "source",
+      "implementationId": "haste"
+    },
+    {
+      "id": "spell-curse",
+      "kind": "spell",
+      "name": "Curse",
+      "origin": "source",
+      "implementationId": "curse"
+    },
+    {
+      "id": "spell-scourge",
+      "kind": "spell",
+      "name": "Scourge",
+      "origin": "source",
+      "implementationId": "scourge"
+    },
+    {
+      "id": "spell-aura",
+      "kind": "spell",
+      "name": "Aura",
+      "origin": "source",
+      "implementationId": "aura"
+    },
+    {
+      "id": "spell-charm",
+      "kind": "spell",
+      "name": "Charm",
+      "origin": "source",
+      "implementationId": "charm"
+    },
+    {
+      "id": "weapon-broadsword",
+      "kind": "weapon",
+      "name": "Broadsword",
+      "origin": "source",
+      "implementationId": "broadsword"
+    },
+    {
+      "id": "weapon-longsword",
+      "kind": "weapon",
+      "name": "Longsword",
+      "origin": "source",
+      "implementationId": "longsword"
+    },
+    {
+      "id": "weapon-mythril-sword",
+      "kind": "weapon",
+      "name": "Mythril Sword",
+      "origin": "source",
+      "implementationId": "mythril-sword"
+    },
+    {
+      "id": "weapon-ancient-sword",
+      "kind": "weapon",
+      "name": "Ancient Sword",
+      "origin": "source",
+      "implementationId": "ancient-sword"
+    },
+    {
+      "id": "weapon-sleep-blade",
+      "kind": "weapon",
+      "name": "Sleep Blade",
+      "origin": "source",
+      "implementationId": "sleep-blade"
+    },
+    {
+      "id": "weapon-wing-sword",
+      "kind": "weapon",
+      "name": "Wing Sword",
+      "origin": "source",
+      "implementationId": "wing-sword"
+    },
+    {
+      "id": "weapon-flame-sword",
+      "kind": "weapon",
+      "name": "Flame Sword",
+      "origin": "source",
+      "implementationId": "flame-sword"
+    },
+    {
+      "id": "weapon-ice-brand",
+      "kind": "weapon",
+      "name": "Ice Brand",
+      "origin": "source",
+      "implementationId": "ice-brand"
+    },
+    {
+      "id": "weapon-blood-sword",
+      "kind": "weapon",
+      "name": "Blood Sword",
+      "origin": "source",
+      "implementationId": "blood-sword"
+    },
+    {
+      "id": "weapon-defender",
+      "kind": "weapon",
+      "name": "Defender",
+      "origin": "source",
+      "implementationId": "defender"
+    },
+    {
+      "id": "weapon-sun-blade",
+      "kind": "weapon",
+      "name": "Sun Blade",
+      "origin": "source",
+      "implementationId": "sun-blade"
+    },
+    {
+      "id": "weapon-excalibur",
+      "kind": "weapon",
+      "name": "Excalibur",
+      "origin": "source",
+      "implementationId": "excalibur"
+    },
+    {
+      "id": "weapon-masamune",
+      "kind": "weapon",
+      "name": "Masamune",
+      "origin": "source",
+      "implementationId": "masamune"
+    },
+    {
+      "id": "weapon-hand-axe",
+      "kind": "weapon",
+      "name": "Hand Axe",
+      "origin": "source",
+      "implementationId": "hand-axe"
+    },
+    {
+      "id": "weapon-battle-axe",
+      "kind": "weapon",
+      "name": "Battle Axe",
+      "origin": "source",
+      "implementationId": "battle-axe"
+    },
+    {
+      "id": "weapon-mythril-axe",
+      "kind": "weapon",
+      "name": "Mythril Axe",
+      "origin": "source",
+      "implementationId": "mythril-axe"
+    },
+    {
+      "id": "weapon-demon-axe",
+      "kind": "weapon",
+      "name": "Demon Axe",
+      "origin": "source",
+      "implementationId": "demon-axe"
+    },
+    {
+      "id": "weapon-ogrekiller",
+      "kind": "weapon",
+      "name": "Ogrekiller",
+      "origin": "source",
+      "implementationId": "ogrekiller"
+    },
+    {
+      "id": "weapon-rune-axe",
+      "kind": "weapon",
+      "name": "Rune Axe",
+      "origin": "source",
+      "implementationId": "rune-axe"
+    },
+    {
+      "id": "weapon-javelin",
+      "kind": "weapon",
+      "name": "Javelin",
+      "origin": "source",
+      "implementationId": "javelin"
+    },
+    {
+      "id": "weapon-spear",
+      "kind": "weapon",
+      "name": "Spear",
+      "origin": "source",
+      "implementationId": "spear"
+    },
+    {
+      "id": "weapon-mythril-spear",
+      "kind": "weapon",
+      "name": "Mythril Spear",
+      "origin": "source",
+      "implementationId": "mythril-spear"
+    },
+    {
+      "id": "weapon-trident",
+      "kind": "weapon",
+      "name": "Trident",
+      "origin": "source",
+      "implementationId": "trident"
+    },
+    {
+      "id": "weapon-flame-lance",
+      "kind": "weapon",
+      "name": "Flame Lance",
+      "origin": "source",
+      "implementationId": "flame-lance"
+    },
+    {
+      "id": "weapon-ice-lance",
+      "kind": "weapon",
+      "name": "Ice Lance",
+      "origin": "source",
+      "implementationId": "ice-lance"
+    },
+    {
+      "id": "weapon-holy-lance",
+      "kind": "weapon",
+      "name": "Holy Lance",
+      "origin": "source",
+      "implementationId": "holy-lance"
+    },
+    {
+      "id": "weapon-shortbow",
+      "kind": "weapon",
+      "name": "Shortbow",
+      "origin": "source",
+      "implementationId": "shortbow"
+    },
+    {
+      "id": "weapon-longbow",
+      "kind": "weapon",
+      "name": "Longbow",
+      "origin": "source",
+      "implementationId": "longbow"
+    },
+    {
+      "id": "weapon-mythril-bow",
+      "kind": "weapon",
+      "name": "Mythril Bow",
+      "origin": "source",
+      "implementationId": "mythril-bow"
+    },
+    {
+      "id": "weapon-dark-bow",
+      "kind": "weapon",
+      "name": "Dark Bow",
+      "origin": "source",
+      "implementationId": "dark-bow"
+    },
+    {
+      "id": "weapon-flame-bow",
+      "kind": "weapon",
+      "name": "Flame Bow",
+      "origin": "source",
+      "implementationId": "flame-bow"
+    },
+    {
+      "id": "weapon-ice-bow",
+      "kind": "weapon",
+      "name": "Ice Bow",
+      "origin": "source",
+      "implementationId": "ice-bow"
+    },
+    {
+      "id": "weapon-knife",
+      "kind": "weapon",
+      "name": "Knife",
+      "origin": "source",
+      "implementationId": "knife"
+    },
+    {
+      "id": "weapon-dagger",
+      "kind": "weapon",
+      "name": "Dagger",
+      "origin": "source",
+      "implementationId": "dagger"
+    },
+    {
+      "id": "weapon-mythril-knife",
+      "kind": "weapon",
+      "name": "Mythril Knife",
+      "origin": "source",
+      "implementationId": "mythril-knife"
+    },
+    {
+      "id": "weapon-main-gauche",
+      "kind": "weapon",
+      "name": "Main Gauche",
+      "origin": "source",
+      "implementationId": "main-gauche"
+    },
+    {
+      "id": "weapon-orichalcum",
+      "kind": "weapon",
+      "name": "Orichalcum",
+      "origin": "source",
+      "implementationId": "orichalcum"
+    },
+    {
+      "id": "weapon-cat-claws",
+      "kind": "weapon",
+      "name": "Cat Claws",
+      "origin": "source",
+      "implementationId": "cat-claws"
+    },
+    {
+      "id": "weapon-staff",
+      "kind": "weapon",
+      "name": "Staff",
+      "origin": "source",
+      "implementationId": "staff"
+    },
+    {
+      "id": "weapon-mace",
+      "kind": "weapon",
+      "name": "Mace",
+      "origin": "source",
+      "implementationId": "mace"
+    },
+    {
+      "id": "weapon-mythril-mace",
+      "kind": "weapon",
+      "name": "Mythril Mace",
+      "origin": "source",
+      "implementationId": "mythril-mace"
+    },
+    {
+      "id": "weapon-werebuster",
+      "kind": "weapon",
+      "name": "Werebuster",
+      "origin": "source",
+      "implementationId": "werebuster"
+    },
+    {
+      "id": "weapon-mage-staff",
+      "kind": "weapon",
+      "name": "Mage Staff",
+      "origin": "source",
+      "implementationId": "mage-staff"
+    },
+    {
+      "id": "weapon-healing-staff",
+      "kind": "weapon",
+      "name": "Healing Staff",
+      "origin": "source",
+      "implementationId": "healing-staff"
+    },
+    {
+      "id": "weapon-power-staff",
+      "kind": "weapon",
+      "name": "Power Staff",
+      "origin": "source",
+      "implementationId": "power-staff"
+    },
+    {
+      "id": "weapon-wizard-staff",
+      "kind": "weapon",
+      "name": "Wizard Staff",
+      "origin": "source",
+      "implementationId": "wizard-staff"
+    },
+    {
+      "id": "weapon-diamond-mace",
+      "kind": "weapon",
+      "name": "Diamond Mace",
+      "origin": "source",
+      "implementationId": "diamond-mace"
+    },
+    {
+      "id": "armor-buckler",
+      "kind": "armor",
+      "name": "Buckler",
+      "origin": "source",
+      "implementationId": "buckler"
+    },
+    {
+      "id": "armor-bronze-shield",
+      "kind": "armor",
+      "name": "Bronze Shield",
+      "origin": "source",
+      "implementationId": "bronze-shield"
+    },
+    {
+      "id": "armor-mythril-shield",
+      "kind": "armor",
+      "name": "Mythril Shield",
+      "origin": "source",
+      "implementationId": "mythril-shield"
+    },
+    {
+      "id": "armor-golden-shield",
+      "kind": "armor",
+      "name": "Golden Shield",
+      "origin": "source",
+      "implementationId": "golden-shield"
+    },
+    {
+      "id": "armor-ice-shield",
+      "kind": "armor",
+      "name": "Ice Shield",
+      "origin": "source",
+      "implementationId": "ice-shield"
+    },
+    {
+      "id": "armor-flame-shield",
+      "kind": "armor",
+      "name": "Flame Shield",
+      "origin": "source",
+      "implementationId": "flame-shield"
+    },
+    {
+      "id": "armor-diamond-shield",
+      "kind": "armor",
+      "name": "Diamond Shield",
+      "origin": "source",
+      "implementationId": "diamond-shield"
+    },
+    {
+      "id": "armor-aegis-shield",
+      "kind": "armor",
+      "name": "Aegis Shield",
+      "origin": "source",
+      "implementationId": "aegis-shield"
+    },
+    {
+      "id": "armor-dragon-shield",
+      "kind": "armor",
+      "name": "Dragon Shield",
+      "origin": "source",
+      "implementationId": "dragon-shield"
+    },
+    {
+      "id": "armor-clothes",
+      "kind": "armor",
+      "name": "Clothes",
+      "origin": "source",
+      "implementationId": "clothes"
+    },
+    {
+      "id": "armor-leather-armor",
+      "kind": "armor",
+      "name": "Leather Armor",
+      "origin": "source",
+      "implementationId": "leather-armor"
+    },
+    {
+      "id": "armor-copper-cuirass",
+      "kind": "armor",
+      "name": "Copper Cuirass",
+      "origin": "source",
+      "implementationId": "copper-cuirass"
+    },
+    {
+      "id": "armor-silver-cuirass",
+      "kind": "armor",
+      "name": "Silver Cuirass",
+      "origin": "source",
+      "implementationId": "silver-cuirass"
+    },
+    {
+      "id": "armor-mythril-armor",
+      "kind": "armor",
+      "name": "Mythril Armor",
+      "origin": "source",
+      "implementationId": "mythril-armor"
+    },
+    {
+      "id": "armor-golden-armor",
+      "kind": "armor",
+      "name": "Golden Armor",
+      "origin": "source",
+      "implementationId": "golden-armor"
+    },
+    {
+      "id": "armor-knight-armor",
+      "kind": "armor",
+      "name": "Knight Armor",
+      "origin": "source",
+      "implementationId": "knight-armor"
+    },
+    {
+      "id": "armor-flame-armor",
+      "kind": "armor",
+      "name": "Flame Armor",
+      "origin": "source",
+      "implementationId": "flame-armor"
+    },
+    {
+      "id": "armor-ice-armor",
+      "kind": "armor",
+      "name": "Ice Armor",
+      "origin": "source",
+      "implementationId": "ice-armor"
+    },
+    {
+      "id": "armor-diamond-cuirass",
+      "kind": "armor",
+      "name": "Diamond Cuirass",
+      "origin": "source",
+      "implementationId": "diamond-cuirass"
+    },
+    {
+      "id": "armor-dragon-armor",
+      "kind": "armor",
+      "name": "Dragon Armor",
+      "origin": "source",
+      "implementationId": "dragon-armor"
+    },
+    {
+      "id": "armor-black-garb",
+      "kind": "armor",
+      "name": "Black Garb",
+      "origin": "source",
+      "implementationId": "black-garb"
+    },
+    {
+      "id": "armor-power-vest",
+      "kind": "armor",
+      "name": "Power Vest",
+      "origin": "source",
+      "implementationId": "power-vest"
+    },
+    {
+      "id": "armor-white-robe",
+      "kind": "armor",
+      "name": "White Robe",
+      "origin": "source",
+      "implementationId": "white-robe"
+    },
+    {
+      "id": "armor-leather-cap",
+      "kind": "armor",
+      "name": "Leather Cap",
+      "origin": "source",
+      "implementationId": "leather-cap"
+    },
+    {
+      "id": "armor-bronze-helm",
+      "kind": "armor",
+      "name": "Bronze Helm",
+      "origin": "source",
+      "implementationId": "bronze-helm"
+    },
+    {
+      "id": "armor-mythril-helm",
+      "kind": "armor",
+      "name": "Mythril Helm",
+      "origin": "source",
+      "implementationId": "mythril-helm"
+    },
+    {
+      "id": "armor-golden-helm",
+      "kind": "armor",
+      "name": "Golden Helm",
+      "origin": "source",
+      "implementationId": "golden-helm"
+    },
+    {
+      "id": "armor-giant-helm",
+      "kind": "armor",
+      "name": "Giant's Helm",
+      "origin": "source",
+      "implementationId": "giant-helm"
+    },
+    {
+      "id": "armor-flame-helm",
+      "kind": "armor",
+      "name": "Flame Helm",
+      "origin": "source",
+      "implementationId": "flame-helm"
+    },
+    {
+      "id": "armor-ice-helm",
+      "kind": "armor",
+      "name": "Ice Helm",
+      "origin": "source",
+      "implementationId": "ice-helm"
+    },
+    {
+      "id": "armor-diamond-helm",
+      "kind": "armor",
+      "name": "Diamond Helm",
+      "origin": "source",
+      "implementationId": "diamond-helm"
+    },
+    {
+      "id": "armor-gold-hairpin",
+      "kind": "armor",
+      "name": "Gold Hairpin",
+      "origin": "source",
+      "implementationId": "gold-hairpin"
+    },
+    {
+      "id": "armor-leather-gloves",
+      "kind": "armor",
+      "name": "Leather Gloves",
+      "origin": "source",
+      "implementationId": "leather-gloves"
+    },
+    {
+      "id": "armor-bronze-gauntlets",
+      "kind": "armor",
+      "name": "Bronze Gauntlets",
+      "origin": "source",
+      "implementationId": "bronze-gauntlets"
+    },
+    {
+      "id": "armor-mythril-gloves",
+      "kind": "armor",
+      "name": "Mythril Gloves",
+      "origin": "source",
+      "implementationId": "mythril-gloves"
+    },
+    {
+      "id": "armor-giant-gloves",
+      "kind": "armor",
+      "name": "Giant's Gloves",
+      "origin": "source",
+      "implementationId": "giant-gloves"
+    },
+    {
+      "id": "armor-flame-gloves",
+      "kind": "armor",
+      "name": "Flame Gloves",
+      "origin": "source",
+      "implementationId": "flame-gloves"
+    },
+    {
+      "id": "armor-ice-gloves",
+      "kind": "armor",
+      "name": "Ice Gloves",
+      "origin": "source",
+      "implementationId": "ice-gloves"
+    },
+    {
+      "id": "armor-diamond-gloves",
+      "kind": "armor",
+      "name": "Diamond Gloves",
+      "origin": "source",
+      "implementationId": "diamond-gloves"
+    },
+    {
+      "id": "armor-thief-gloves",
+      "kind": "armor",
+      "name": "Thief's Gloves",
+      "origin": "source",
+      "implementationId": "thief-gloves"
+    },
+    {
+      "id": "armor-rebel-armband",
+      "kind": "armor",
+      "name": "Rebel Armband",
+      "origin": "addition",
+      "implementationId": "rebel-armband"
+    },
+    {
+      "id": "item-potion",
+      "kind": "consumable",
+      "name": "Potion",
+      "origin": "source",
+      "implementationId": "potion"
+    },
+    {
+      "id": "item-hi-potion",
+      "kind": "consumable",
+      "name": "Hi-Potion",
+      "origin": "source",
+      "implementationId": "hi-potion"
+    },
+    {
+      "id": "item-ether",
+      "kind": "consumable",
+      "name": "Ether",
+      "origin": "source",
+      "implementationId": "ether"
+    },
+    {
+      "id": "item-elixir",
+      "kind": "consumable",
+      "name": "Elixir",
+      "origin": "source",
+      "implementationId": "elixir"
+    },
+    {
+      "id": "item-phoenix-down",
+      "kind": "consumable",
+      "name": "Phoenix Down",
+      "origin": "source",
+      "implementationId": "phoenix-down"
+    },
+    {
+      "id": "item-antidote",
+      "kind": "consumable",
+      "name": "Antidote",
+      "origin": "source",
+      "implementationId": "antidote"
+    },
+    {
+      "id": "item-eye-drops",
+      "kind": "consumable",
+      "name": "Eye Drops",
+      "origin": "source",
+      "implementationId": "eye-drops"
+    },
+    {
+      "id": "item-echo-screen",
+      "kind": "consumable",
+      "name": "Echo Screen",
+      "origin": "source",
+      "implementationId": "echo-screen"
+    },
+    {
+      "id": "item-mallet",
+      "kind": "consumable",
+      "name": "Mallet",
+      "origin": "source",
+      "implementationId": "mallet"
+    },
+    {
+      "id": "item-maidens-kiss",
+      "kind": "consumable",
+      "name": "Maiden's Kiss",
+      "origin": "source",
+      "implementationId": "maidens-kiss"
+    },
+    {
+      "id": "item-gold-needle",
+      "kind": "consumable",
+      "name": "Gold Needle",
+      "origin": "source",
+      "implementationId": "gold-needle"
+    },
+    {
+      "id": "item-alarm-clock",
+      "kind": "consumable",
+      "name": "Alarm Clock",
+      "origin": "addition",
+      "implementationId": "alarm-clock"
+    },
+    {
+      "id": "item-unicorn-horn",
+      "kind": "consumable",
+      "name": "Unicorn Horn",
+      "origin": "source",
+      "implementationId": "unicorn-horn"
+    },
+    {
+      "id": "item-cottage",
+      "kind": "consumable",
+      "name": "Cottage",
+      "origin": "source",
+      "implementationId": "cottage"
+    },
+    {
+      "id": "item-cross",
+      "kind": "consumable",
+      "name": "Cross",
+      "origin": "source",
+      "implementationId": "cross"
+    },
+    {
+      "id": "item-bacchus-wine",
+      "kind": "consumable",
+      "name": "Bacchus' Wine",
+      "origin": "source",
+      "implementationId": "bacchus-wine"
+    },
+    {
+      "id": "item-hermes-shoes",
+      "kind": "consumable",
+      "name": "Hermes' Shoes",
+      "origin": "source",
+      "implementationId": "hermes-shoes"
+    },
+    {
+      "id": "item-spider-silk",
+      "kind": "consumable",
+      "name": "Spider's Silk",
+      "origin": "source",
+      "implementationId": "spider-silk"
+    },
+    {
+      "id": "item-hourglass",
+      "kind": "consumable",
+      "name": "Hourglass",
+      "origin": "source",
+      "implementationId": "hourglass"
+    },
+    {
+      "id": "item-tome-cure",
+      "kind": "consumable",
+      "name": "Cure Tome",
+      "origin": "source",
+      "implementationId": "tome-cure"
+    },
+    {
+      "id": "item-tome-life",
+      "kind": "consumable",
+      "name": "Life Tome",
+      "origin": "source",
+      "implementationId": "tome-life"
+    },
+    {
+      "id": "item-tome-basuna",
+      "kind": "consumable",
+      "name": "Basuna Tome",
+      "origin": "source",
+      "implementationId": "tome-basuna"
+    },
+    {
+      "id": "item-tome-esuna",
+      "kind": "consumable",
+      "name": "Esuna Tome",
+      "origin": "source",
+      "implementationId": "tome-esuna"
+    },
+    {
+      "id": "item-tome-blink",
+      "kind": "consumable",
+      "name": "Blink Tome",
+      "origin": "source",
+      "implementationId": "tome-blink"
+    },
+    {
+      "id": "item-tome-protect",
+      "kind": "consumable",
+      "name": "Protect Tome",
+      "origin": "source",
+      "implementationId": "tome-protect"
+    },
+    {
+      "id": "item-tome-shell",
+      "kind": "consumable",
+      "name": "Shell Tome",
+      "origin": "source",
+      "implementationId": "tome-shell"
+    },
+    {
+      "id": "item-tome-barrier",
+      "kind": "consumable",
+      "name": "Barrier Tome",
+      "origin": "source",
+      "implementationId": "tome-barrier"
+    },
+    {
+      "id": "item-tome-wall",
+      "kind": "consumable",
+      "name": "Wall Tome",
+      "origin": "source",
+      "implementationId": "tome-wall"
+    },
+    {
+      "id": "item-tome-silence",
+      "kind": "consumable",
+      "name": "Silence Tome",
+      "origin": "source",
+      "implementationId": "tome-silence"
+    },
+    {
+      "id": "item-tome-mini",
+      "kind": "consumable",
+      "name": "Mini Tome",
+      "origin": "source",
+      "implementationId": "tome-mini"
+    },
+    {
+      "id": "item-tome-fog",
+      "kind": "consumable",
+      "name": "Fog Tome",
+      "origin": "source",
+      "implementationId": "tome-fog"
+    },
+    {
+      "id": "item-tome-dispel",
+      "kind": "consumable",
+      "name": "Dispel Tome",
+      "origin": "source",
+      "implementationId": "tome-dispel"
+    },
+    {
+      "id": "item-tome-slow",
+      "kind": "consumable",
+      "name": "Slow Tome",
+      "origin": "source",
+      "implementationId": "tome-slow"
+    },
+    {
+      "id": "item-tome-sap",
+      "kind": "consumable",
+      "name": "Sap Tome",
+      "origin": "source",
+      "implementationId": "tome-sap"
+    },
+    {
+      "id": "item-tome-fear",
+      "kind": "consumable",
+      "name": "Fear Tome",
+      "origin": "source",
+      "implementationId": "tome-fear"
+    },
+    {
+      "id": "item-tome-teleport",
+      "kind": "consumable",
+      "name": "Teleport Tome",
+      "origin": "source",
+      "implementationId": "tome-teleport"
+    },
+    {
+      "id": "item-tome-holy",
+      "kind": "consumable",
+      "name": "Holy Tome",
+      "origin": "source",
+      "implementationId": "tome-holy"
+    },
+    {
+      "id": "item-tome-swap",
+      "kind": "consumable",
+      "name": "Swap Tome",
+      "origin": "source",
+      "implementationId": "tome-swap"
+    },
+    {
+      "id": "item-tome-fire",
+      "kind": "consumable",
+      "name": "Fire Tome",
+      "origin": "source",
+      "implementationId": "tome-fire"
+    },
+    {
+      "id": "item-tome-ice",
+      "kind": "consumable",
+      "name": "Ice Tome",
+      "origin": "source",
+      "implementationId": "tome-ice"
+    },
+    {
+      "id": "item-tome-bolt",
+      "kind": "consumable",
+      "name": "Bolt Tome",
+      "origin": "source",
+      "implementationId": "tome-bolt"
+    },
+    {
+      "id": "item-tome-poison",
+      "kind": "consumable",
+      "name": "Poison Tome",
+      "origin": "source",
+      "implementationId": "tome-poison"
+    },
+    {
+      "id": "item-tome-sleep",
+      "kind": "consumable",
+      "name": "Sleep Tome",
+      "origin": "source",
+      "implementationId": "tome-sleep"
+    },
+    {
+      "id": "item-tome-blind",
+      "kind": "consumable",
+      "name": "Blind Tome",
+      "origin": "source",
+      "implementationId": "tome-blind"
+    },
+    {
+      "id": "item-tome-stun",
+      "kind": "consumable",
+      "name": "Stun Tome",
+      "origin": "source",
+      "implementationId": "tome-stun"
+    },
+    {
+      "id": "item-tome-toad",
+      "kind": "consumable",
+      "name": "Toad Tome",
+      "origin": "source",
+      "implementationId": "tome-toad"
+    },
+    {
+      "id": "item-tome-break",
+      "kind": "consumable",
+      "name": "Break Tome",
+      "origin": "source",
+      "implementationId": "tome-break"
+    },
+    {
+      "id": "item-tome-death",
+      "kind": "consumable",
+      "name": "Death Tome",
+      "origin": "source",
+      "implementationId": "tome-death"
+    },
+    {
+      "id": "item-tome-drain",
+      "kind": "consumable",
+      "name": "Drain Tome",
+      "origin": "source",
+      "implementationId": "tome-drain"
+    },
+    {
+      "id": "item-tome-osmose",
+      "kind": "consumable",
+      "name": "Osmose Tome",
+      "origin": "source",
+      "implementationId": "tome-osmose"
+    },
+    {
+      "id": "item-tome-flare",
+      "kind": "consumable",
+      "name": "Flare Tome",
+      "origin": "source",
+      "implementationId": "tome-flare"
+    },
+    {
+      "id": "item-tome-warp",
+      "kind": "consumable",
+      "name": "Warp Tome",
+      "origin": "source",
+      "implementationId": "tome-warp"
+    },
+    {
+      "id": "item-tome-aero",
+      "kind": "consumable",
+      "name": "Aero Tome",
+      "origin": "source",
+      "implementationId": "tome-aero"
+    },
+    {
+      "id": "item-tome-berserk",
+      "kind": "consumable",
+      "name": "Berserk Tome",
+      "origin": "source",
+      "implementationId": "tome-berserk"
+    },
+    {
+      "id": "item-tome-haste",
+      "kind": "consumable",
+      "name": "Haste Tome",
+      "origin": "source",
+      "implementationId": "tome-haste"
+    },
+    {
+      "id": "item-tome-curse",
+      "kind": "consumable",
+      "name": "Curse Tome",
+      "origin": "source",
+      "implementationId": "tome-curse"
+    },
+    {
+      "id": "item-tome-scourge",
+      "kind": "consumable",
+      "name": "Scourge Tome",
+      "origin": "source",
+      "implementationId": "tome-scourge"
+    },
+    {
+      "id": "item-tome-aura",
+      "kind": "consumable",
+      "name": "Aura Tome",
+      "origin": "source",
+      "implementationId": "tome-aura"
+    },
+    {
+      "id": "item-tome-charm",
+      "kind": "consumable",
+      "name": "Charm Tome",
+      "origin": "source",
+      "implementationId": "tome-charm"
+    },
+    {
+      "id": "key-mythril",
+      "kind": "key",
+      "name": "Mythril",
+      "origin": "source",
+      "implementationId": "mythril"
+    },
+    {
+      "id": "key-goddess-bell",
+      "kind": "key",
+      "name": "Goddess's Bell",
+      "origin": "source",
+      "implementationId": "goddess-bell"
+    },
+    {
+      "id": "key-egils-torch",
+      "kind": "key",
+      "name": "Egil's Torch",
+      "origin": "source",
+      "implementationId": "egils-torch"
+    },
+    {
+      "id": "key-sunfire",
+      "kind": "key",
+      "name": "Sunfire",
+      "origin": "source",
+      "implementationId": "sunfire"
+    },
+    {
+      "id": "key-pass",
+      "kind": "key",
+      "name": "Imperial Pass",
+      "origin": "source",
+      "implementationId": "pass"
+    },
+    {
+      "id": "key-ring",
+      "kind": "key",
+      "name": "Scott's Ring",
+      "origin": "source",
+      "implementationId": "ring"
+    },
+    {
+      "id": "key-white-mask",
+      "kind": "key",
+      "name": "White Mask",
+      "origin": "source",
+      "implementationId": "white-mask"
+    },
+    {
+      "id": "key-black-mask",
+      "kind": "key",
+      "name": "Black Mask",
+      "origin": "source",
+      "implementationId": "black-mask"
+    },
+    {
+      "id": "key-pendant",
+      "kind": "key",
+      "name": "Dragoon Pendant",
+      "origin": "source",
+      "implementationId": "pendant"
+    },
+    {
+      "id": "key-wyvern-egg",
+      "kind": "key",
+      "name": "Wyvern Egg",
+      "origin": "source",
+      "implementationId": "wyvern-egg"
+    },
+    {
+      "id": "key-ultima-tome",
+      "kind": "key",
+      "name": "Ultima Tome",
+      "origin": "source",
+      "implementationId": "ultima-tome"
+    },
+    {
+      "id": "key-sealed-dispatch",
+      "kind": "key",
+      "name": "Sealed Dispatch",
+      "origin": "addition",
+      "implementationId": "sealed-dispatch"
+    },
+    {
+      "id": "enemy-leg-eater",
+      "kind": "enemy",
+      "name": "Leg Eater",
+      "origin": "source",
+      "implementationId": "leg-eater"
+    },
+    {
+      "id": "enemy-hornet",
+      "kind": "enemy",
+      "name": "Hornet",
+      "origin": "source",
+      "implementationId": "hornet"
+    },
+    {
+      "id": "enemy-queen-bee",
+      "kind": "enemy",
+      "name": "Queen Bee",
+      "origin": "source",
+      "implementationId": "queen-bee"
+    },
+    {
+      "id": "enemy-snowman",
+      "kind": "enemy",
+      "name": "Snowman",
+      "origin": "source",
+      "implementationId": "snowman"
+    },
+    {
+      "id": "enemy-sasquatch",
+      "kind": "enemy",
+      "name": "Sasquatch",
+      "origin": "source",
+      "implementationId": "sasquatch"
+    },
+    {
+      "id": "enemy-icicle",
+      "kind": "enemy",
+      "name": "Icicle",
+      "origin": "source",
+      "implementationId": "icicle"
+    },
+    {
+      "id": "enemy-sprinter",
+      "kind": "enemy",
+      "name": "Sprinter",
+      "origin": "source",
+      "implementationId": "sprinter"
+    },
+    {
+      "id": "enemy-goblin",
+      "kind": "enemy",
+      "name": "Goblin",
+      "origin": "source",
+      "implementationId": "goblin"
+    },
+    {
+      "id": "enemy-goblin-guard",
+      "kind": "enemy",
+      "name": "Goblin Guard",
+      "origin": "source",
+      "implementationId": "goblin-guard"
+    },
+    {
+      "id": "enemy-goblin-prince",
+      "kind": "enemy",
+      "name": "Goblin Prince",
+      "origin": "source",
+      "implementationId": "goblin-prince"
+    },
+    {
+      "id": "enemy-green-slime",
+      "kind": "enemy",
+      "name": "Green Slime",
+      "origin": "source",
+      "implementationId": "green-slime"
+    },
+    {
+      "id": "enemy-yellow-jelly",
+      "kind": "enemy",
+      "name": "Yellow Jelly",
+      "origin": "source",
+      "implementationId": "yellow-jelly"
+    },
+    {
+      "id": "enemy-red-mousse",
+      "kind": "enemy",
+      "name": "Red Mousse",
+      "origin": "source",
+      "implementationId": "red-mousse"
+    },
+    {
+      "id": "enemy-skeleton",
+      "kind": "enemy",
+      "name": "Skeleton",
+      "origin": "source",
+      "implementationId": "skeleton"
+    },
+    {
+      "id": "enemy-ghoul",
+      "kind": "enemy",
+      "name": "Ghoul",
+      "origin": "source",
+      "implementationId": "ghoul"
+    },
+    {
+      "id": "enemy-shadow",
+      "kind": "enemy",
+      "name": "Shadow",
+      "origin": "source",
+      "implementationId": "shadow"
+    },
+    {
+      "id": "enemy-wraith",
+      "kind": "enemy",
+      "name": "Wraith",
+      "origin": "source",
+      "implementationId": "wraith"
+    },
+    {
+      "id": "enemy-specter",
+      "kind": "enemy",
+      "name": "Specter",
+      "origin": "source",
+      "implementationId": "specter"
+    },
+    {
+      "id": "enemy-revenant",
+      "kind": "enemy",
+      "name": "Revenant",
+      "origin": "source",
+      "implementationId": "revenant"
+    },
+    {
+      "id": "enemy-zombie",
+      "kind": "enemy",
+      "name": "Zombie",
+      "origin": "source",
+      "implementationId": "zombie"
+    },
+    {
+      "id": "enemy-ghast",
+      "kind": "enemy",
+      "name": "Ghast",
+      "origin": "source",
+      "implementationId": "ghast"
+    },
+    {
+      "id": "enemy-ogre",
+      "kind": "enemy",
+      "name": "Ogre",
+      "origin": "source",
+      "implementationId": "ogre"
+    },
+    {
+      "id": "enemy-ogre-mage",
+      "kind": "enemy",
+      "name": "Ogre Mage",
+      "origin": "source",
+      "implementationId": "ogre-mage"
+    },
+    {
+      "id": "enemy-hill-gigas",
+      "kind": "enemy",
+      "name": "Hill Gigas",
+      "origin": "source",
+      "implementationId": "hill-gigas"
+    },
+    {
+      "id": "enemy-ice-gigas",
+      "kind": "enemy",
+      "name": "Ice Gigas",
+      "origin": "source",
+      "implementationId": "ice-gigas"
+    },
+    {
+      "id": "enemy-fire-gigas",
+      "kind": "enemy",
+      "name": "Fire Gigas",
+      "origin": "source",
+      "implementationId": "fire-gigas"
+    },
+    {
+      "id": "enemy-thunder-gigas",
+      "kind": "enemy",
+      "name": "Thunder Gigas",
+      "origin": "source",
+      "implementationId": "thunder-gigas"
+    },
+    {
+      "id": "enemy-bomb",
+      "kind": "enemy",
+      "name": "Bomb",
+      "origin": "source",
+      "implementationId": "bomb"
+    },
+    {
+      "id": "enemy-grenade",
+      "kind": "enemy",
+      "name": "Grenade",
+      "origin": "source",
+      "implementationId": "grenade"
+    },
+    {
+      "id": "enemy-mine",
+      "kind": "enemy",
+      "name": "Mine",
+      "origin": "source",
+      "implementationId": "mine"
+    },
+    {
+      "id": "enemy-soldier",
+      "kind": "enemy",
+      "name": "Soldier",
+      "origin": "source",
+      "implementationId": "soldier"
+    },
+    {
+      "id": "enemy-captain",
+      "kind": "enemy",
+      "name": "Captain",
+      "origin": "source",
+      "implementationId": "captain"
+    },
+    {
+      "id": "enemy-sergeant",
+      "kind": "enemy",
+      "name": "Sergeant",
+      "origin": "source",
+      "implementationId": "sergeant"
+    },
+    {
+      "id": "enemy-black-knight",
+      "kind": "enemy",
+      "name": "Black Knight",
+      "origin": "source",
+      "implementationId": "black-knight"
+    },
+    {
+      "id": "enemy-general",
+      "kind": "enemy",
+      "name": "General",
+      "origin": "source",
+      "implementationId": "general"
+    },
+    {
+      "id": "enemy-royal-guard",
+      "kind": "enemy",
+      "name": "Royal Guard",
+      "origin": "source",
+      "implementationId": "royal-guard"
+    },
+    {
+      "id": "enemy-sorcerer",
+      "kind": "enemy",
+      "name": "Sorcerer",
+      "origin": "source",
+      "implementationId": "sorcerer"
+    },
+    {
+      "id": "enemy-wizard",
+      "kind": "enemy",
+      "name": "Wizard",
+      "origin": "source",
+      "implementationId": "wizard"
+    },
+    {
+      "id": "enemy-magician",
+      "kind": "enemy",
+      "name": "Magician",
+      "origin": "source",
+      "implementationId": "magician"
+    },
+    {
+      "id": "enemy-dark-mage",
+      "kind": "enemy",
+      "name": "Dark Mage",
+      "origin": "source",
+      "implementationId": "dark-mage"
+    },
+    {
+      "id": "enemy-werepanther",
+      "kind": "enemy",
+      "name": "Werepanther",
+      "origin": "source",
+      "implementationId": "werepanther"
+    },
+    {
+      "id": "enemy-wild-horn",
+      "kind": "enemy",
+      "name": "Wild Horn",
+      "origin": "source",
+      "implementationId": "wild-horn"
+    },
+    {
+      "id": "enemy-big-horn",
+      "kind": "enemy",
+      "name": "Big Horn",
+      "origin": "source",
+      "implementationId": "big-horn"
+    },
+    {
+      "id": "enemy-land-turtle",
+      "kind": "enemy",
+      "name": "Land Turtle",
+      "origin": "source",
+      "implementationId": "land-turtle"
+    },
+    {
+      "id": "enemy-adamantoise",
+      "kind": "enemy",
+      "name": "Adamantoise",
+      "origin": "source",
+      "implementationId": "adamantoise"
+    },
+    {
+      "id": "enemy-basilisk",
+      "kind": "enemy",
+      "name": "Basilisk",
+      "origin": "source",
+      "implementationId": "basilisk"
+    },
+    {
+      "id": "enemy-cockatrice",
+      "kind": "enemy",
+      "name": "Cockatrice",
+      "origin": "source",
+      "implementationId": "cockatrice"
+    },
+    {
+      "id": "enemy-chimera",
+      "kind": "enemy",
+      "name": "Chimera",
+      "origin": "source",
+      "implementationId": "chimera"
+    },
+    {
+      "id": "enemy-lamia",
+      "kind": "enemy",
+      "name": "Lamia",
+      "origin": "source",
+      "implementationId": "lamia"
+    },
+    {
+      "id": "enemy-lamia-queen",
+      "kind": "enemy",
+      "name": "Lamia Queen",
+      "origin": "source",
+      "implementationId": "lamia-queen"
+    },
+    {
+      "id": "enemy-behemoth",
+      "kind": "enemy",
+      "name": "Behemoth",
+      "origin": "source",
+      "implementationId": "behemoth"
+    },
+    {
+      "id": "enemy-roundworm",
+      "kind": "enemy",
+      "name": "Roundworm",
+      "origin": "source",
+      "implementationId": "roundworm"
+    },
+    {
+      "id": "enemy-sand-worm",
+      "kind": "enemy",
+      "name": "Sand Worm",
+      "origin": "source",
+      "implementationId": "sand-worm"
+    },
+    {
+      "id": "enemy-dual-heads",
+      "kind": "enemy",
+      "name": "Dual Heads",
+      "origin": "source",
+      "implementationId": "dual-heads"
+    },
+    {
+      "id": "enemy-parasite",
+      "kind": "enemy",
+      "name": "Parasite",
+      "origin": "source",
+      "implementationId": "parasite"
+    },
+    {
+      "id": "enemy-red-soul",
+      "kind": "enemy",
+      "name": "Red Soul",
+      "origin": "source",
+      "implementationId": "red-soul"
+    },
+    {
+      "id": "enemy-splinter",
+      "kind": "enemy",
+      "name": "Splinter",
+      "origin": "source",
+      "implementationId": "splinter"
+    },
+    {
+      "id": "enemy-wood-golem",
+      "kind": "enemy",
+      "name": "Wood Golem",
+      "origin": "source",
+      "implementationId": "wood-golem"
+    },
+    {
+      "id": "enemy-stone-golem",
+      "kind": "enemy",
+      "name": "Stone Golem",
+      "origin": "source",
+      "implementationId": "stone-golem"
+    },
+    {
+      "id": "enemy-mythril-golem",
+      "kind": "enemy",
+      "name": "Mythril Golem",
+      "origin": "source",
+      "implementationId": "mythril-golem"
+    },
+    {
+      "id": "enemy-borghen",
+      "kind": "enemy",
+      "name": "Borghen",
+      "origin": "source",
+      "implementationId": "borghen"
+    },
+    {
+      "id": "enemy-zombie-borghen",
+      "kind": "enemy",
+      "name": "Zombie Borghen",
+      "origin": "source",
+      "implementationId": "zombie-borghen"
+    },
+    {
+      "id": "enemy-gottos",
+      "kind": "enemy",
+      "name": "Gottos",
+      "origin": "source",
+      "implementationId": "gottos"
+    },
+    {
+      "id": "enemy-emperor",
+      "kind": "enemy",
+      "name": "Emperor of Palamecia",
+      "origin": "source",
+      "implementationId": "emperor"
+    },
+    {
+      "id": "enemy-dark-emperor",
+      "kind": "enemy",
+      "name": "Dark Emperor",
+      "origin": "source",
+      "implementationId": "dark-emperor"
+    },
+    {
+      "id": "enemy-white-dragon",
+      "kind": "enemy",
+      "name": "White Dragon",
+      "origin": "source",
+      "implementationId": "white-dragon"
+    },
+    {
+      "id": "enemy-green-dragon",
+      "kind": "enemy",
+      "name": "Green Dragon",
+      "origin": "source",
+      "implementationId": "green-dragon"
+    },
+    {
+      "id": "enemy-blue-dragon",
+      "kind": "enemy",
+      "name": "Blue Dragon",
+      "origin": "source",
+      "implementationId": "blue-dragon"
+    },
+    {
+      "id": "enemy-red-dragon",
+      "kind": "enemy",
+      "name": "Red Dragon",
+      "origin": "source",
+      "implementationId": "red-dragon"
+    },
+    {
+      "id": "enemy-iron-giant",
+      "kind": "enemy",
+      "name": "Iron Giant",
+      "origin": "source",
+      "implementationId": "iron-giant"
+    },
+    {
+      "id": "enemy-imperial-shadow",
+      "kind": "enemy",
+      "name": "Imperial Shadow",
+      "origin": "source",
+      "implementationId": "imperial-shadow"
+    },
+    {
+      "id": "enemy-blood-fiend",
+      "kind": "enemy",
+      "name": "Blood Fiend",
+      "origin": "source",
+      "implementationId": "blood-fiend"
+    },
+    {
+      "id": "enemy-death-rider",
+      "kind": "enemy",
+      "name": "Death Rider",
+      "origin": "source",
+      "implementationId": "death-rider"
+    },
+    {
+      "id": "enemy-sea-serpent",
+      "kind": "enemy",
+      "name": "Sea Serpent",
+      "origin": "source",
+      "implementationId": "sea-serpent"
+    },
+    {
+      "id": "enemy-killer-fish",
+      "kind": "enemy",
+      "name": "Killer Fish",
+      "origin": "source",
+      "implementationId": "killer-fish"
+    },
+    {
+      "id": "enemy-antlion",
+      "kind": "enemy",
+      "name": "Antlion",
+      "origin": "source",
+      "implementationId": "antlion"
+    },
+    {
+      "id": "enemy-gargoyle",
+      "kind": "enemy",
+      "name": "Gargoyle",
+      "origin": "source",
+      "implementationId": "gargoyle"
+    },
+    {
+      "id": "enemy-imp",
+      "kind": "enemy",
+      "name": "Imp",
+      "origin": "source",
+      "implementationId": "imp"
+    },
+    {
+      "id": "enemy-pirate",
+      "kind": "enemy",
+      "name": "Pirate",
+      "origin": "source",
+      "implementationId": "pirate"
+    },
+    {
+      "id": "enemy-dark-knight",
+      "kind": "enemy",
+      "name": "Dark Knight",
+      "origin": "source",
+      "implementationId": "dark-knight"
+    },
+    {
+      "id": "enemy-executioner",
+      "kind": "enemy",
+      "name": "Executioner",
+      "origin": "addition",
+      "implementationId": "executioner"
+    },
+    {
+      "id": "enemy-practice-dummy",
+      "kind": "enemy",
+      "name": "Practice Post",
+      "origin": "addition",
+      "implementationId": "practice-dummy"
+    },
+    {
+      "id": "enemy-drill-imp",
+      "kind": "enemy",
+      "name": "Drill Imp",
+      "origin": "addition",
+      "implementationId": "drill-imp"
+    },
+    {
+      "id": "system-growth",
+      "kind": "system",
+      "name": "Use-based growth",
+      "origin": "source",
+      "implementationId": "system-growth"
+    },
+    {
+      "id": "system-rows",
+      "kind": "system",
+      "name": "Front and back rows",
+      "origin": "source",
+      "implementationId": "system-rows"
+    },
+    {
+      "id": "system-battle-commands",
+      "kind": "system",
+      "name": "Attack, Magic, Item, Flee",
+      "origin": "source",
+      "implementationId": "system-battle-commands"
+    },
+    {
+      "id": "system-status",
+      "kind": "system",
+      "name": "Status ailments and cures",
+      "origin": "source",
+      "implementationId": "system-status"
+    },
+    {
+      "id": "system-vehicles",
+      "kind": "system",
+      "name": "Foot, canoe, ship, snowcraft, airship, chocobo",
+      "origin": "source",
+      "implementationId": "system-vehicles"
+    },
+    {
+      "id": "system-keywords",
+      "kind": "system",
+      "name": "Keyword ask gate",
+      "origin": "source",
+      "implementationId": "system-keywords"
+    },
+    {
+      "id": "system-save",
+      "kind": "system",
+      "name": "Local save and continue",
+      "origin": "source",
+      "implementationId": "system-save"
+    },
+    {
+      "id": "system-inn-shop-sanctuary",
+      "kind": "system",
+      "name": "Inn, shop, and sanctuary",
+      "origin": "source",
+      "implementationId": "system-inn-shop-sanctuary"
+    },
+    {
+      "id": "system-dual-wield",
+      "kind": "system",
+      "name": "Dual wield or weapon and shield",
+      "origin": "source",
+      "implementationId": "system-dual-wield"
+    }
+  ]
+}
