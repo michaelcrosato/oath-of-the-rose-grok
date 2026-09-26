@@ -9,6 +9,7 @@ import {
   shopGoods,
   type GameState,
 } from '../src/engine';
+import { equipAction, fieldUseAction, restAction, rideChoices } from '../src/game/field-actions';
 import { descend, fight, goNpc, must, reachBoss, speak } from './play';
 
 function wake(state: GameState) {
@@ -127,10 +128,12 @@ function semitt(state: GameState) {
   speak(state, 'smith');
   expect(state.flags.mythrilArmed).toBe(true);
   expect(state.items['mythril-sword']).toBe(1);
-  must(state, { type: 'equip', characterId: 'firion', slot: 'main', itemId: 'mythril-sword' });
+  must(state, equipAction('firion', 'main', 'mythril-sword'));
   expect(attackPower(state.party.find((c) => c.id === 'firion')!)).toBeGreaterThan(before);
   expect(shopGoods(state, 'salamand-weapons').some((item) => item.id === 'mythril-sword')).toBe(true);
-  must(state, { type: 'rest', innId: 'salamand' });
+  const room = restAction(state);
+  expect(room).toEqual({ type: 'rest', innId: 'salamand' });
+  must(state, room!);
 }
 
 function dreadnought(state: GameState) {
@@ -158,7 +161,9 @@ function dreadnought(state: GameState) {
   }
   must(state, { type: 'travel-tile', x: 32, y: 7 });
   expect(canReach(state, 'snow-cavern')).toBe(false);
-  must(state, { type: 'board', ride: 'snowcraft' });
+  const snow = rideChoices(state).find((action) => action.type === 'board' && action.ride === 'snowcraft');
+  expect(snow).toEqual({ type: 'board', ride: 'snowcraft' });
+  must(state, snow!);
   expect(state.vehicles.snowcraft).toBe(true);
   expect(canReach(state, 'snow-cavern')).toBe(true);
   must(state, { type: 'journey', locationId: 'snow-cavern' });
@@ -195,7 +200,7 @@ function dreadnought(state: GameState) {
   must(state, { type: 'journey', locationId: 'dreadnought' });
   must(state, { type: 'enter', locationId: 'dreadnought' });
   descend(state);
-  must(state, { type: 'use-item', itemId: 'sunfire' });
+  must(state, fieldUseAction('sunfire'));
   expect(state.battle?.encounterId).toBe('dark-knight');
   fight(state);
   expect(state.flags.leonDarkKnight).toBe(true);
@@ -206,6 +211,11 @@ function dreadnought(state: GameState) {
   speak(state, 'cid');
   expect(state.vehicles.airship).toBe(true);
   expect(canReach(state, 'castle-palamecia')).toBe(true);
+  const lift = rideChoices(state).find((action) => action.type === 'board' && action.ride === 'airship');
+  expect(lift).toEqual({ type: 'board', ride: 'airship' });
+  must(state, lift!);
+  expect(state.ride).toBe('airship');
+  expect(state.mapId).toBe('world');
 }
 
 function leviathan(state: GameState) {
@@ -216,7 +226,9 @@ function leviathan(state: GameState) {
   expect(state.flags.leilaJoined).toBe(true);
   expect(state.party.some((c) => c.id === 'leila')).toBe(true);
   expect(state.phase).toBe('to-leila');
-  must(state, { type: 'sail' });
+  const voyage = rideChoices(state).find((action) => action.type === 'sail');
+  expect(voyage).toEqual({ type: 'sail' });
+  must(state, voyage!);
   fight(state);
   expect(state.phase).toBe('leviathan');
   expect(state.mapId).toBe('leviathan-1');

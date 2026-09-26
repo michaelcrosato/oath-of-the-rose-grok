@@ -31,12 +31,13 @@ async function launchOnce(index) {
   const before = await page.evaluate(() => {
     const canvas = document.querySelector('#game-root canvas');
     if (!canvas) return null;
+    const nearVoid = (r, g, b) => Math.abs(r - 0x14) <= 10 && Math.abs(g - 0x0e) <= 10 && Math.abs(b - 0x18) <= 10;
     const sample = (data) => {
       let painted = 0;
       let samples = 0;
       for (let i = 0; i < data.length; i += 16 * 4) {
         samples += 1;
-        if (data[i] + data[i + 1] + data[i + 2] > 24) painted += 1;
+        if (!nearVoid(data[i], data[i + 1], data[i + 2])) painted += 1;
       }
       return { painted, samples };
     };
@@ -74,19 +75,22 @@ async function launchOnce(index) {
     let painted = 0;
     let samples = 0;
     const colors = new Set();
-    for (let i = 0; i < buf.length; i += 24 * 4) {
+    const nearVoid = (r, g, b) => Math.abs(r - 0x14) <= 10 && Math.abs(g - 0x0e) <= 10 && Math.abs(b - 0x18) <= 10;
+    for (let i = 0; i < buf.length; i += 8 * 4) {
       samples += 1;
       const r = buf[i];
       const g = buf[i + 1];
       const b = buf[i + 2];
-      if (r + g + b > 24) painted += 1;
-      colors.add(`${r >> 4},${g >> 4},${b >> 4}`);
+      if (!nearVoid(r, g, b)) {
+        painted += 1;
+        colors.add(`${r >> 4},${g >> 4},${b >> 4}`);
+      }
     }
     return { painted, samples, colors: colors.size, fight: document.body.innerText.includes('Fight') };
   });
   await page.screenshot({ path: `${scratch}/launch-${index}-play.png` });
   log(`launch ${index} after New Game painted ${after.painted}/${after.samples} colors ${after.colors}`);
-  if (after.painted / after.samples < 0.2) throw new Error('play view is blank');
+  if (after.painted / after.samples < 0.85) throw new Error(`play view is mostly the void background ${after.painted}/${after.samples}`);
   if (after.colors < 4) throw new Error('play view has no tile variation');
   if (errors.length) throw new Error(errors.join('\n'));
   await page.close();

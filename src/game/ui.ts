@@ -1,13 +1,33 @@
-import { KEYWORD_LABEL, type KeywordId } from '../data/content';
-import { MAPS, attackPower, canSaveHere, cureAilments, defensePower, rateEncounter, skillRank, visibleNpcs } from '../engine';
-import { GEAR_BY_ID } from '../data/content';
-import { SHOPS } from '../data/content';
-import { audio } from './audio';
-import { act, continueGame, newGame, savedGameExists, session, subscribe, title } from './session';
-import { applySettings, browserEnv } from './runtime';
+import { GEAR_BY_ID, KEYWORD_LABEL, SHOPS, type KeywordId } from '../data/content';
+import { INNS, SANCTUARIES } from '../data/content';
+import { attackPower, canSaveHere, cureAilments, defensePower, rateEncounter, skillRank } from '../engine';
 import { loadSettings, SETTINGS_KEY } from '../engine/save';
+import { audio } from './audio';
+import {
+  boardAction,
+  confirmAction,
+  confirmLabel,
+  enterAction,
+  equipAction,
+  equipChoices,
+  fieldUseAction,
+  fieldUseChoices,
+  journeyAction,
+  journeyChoices,
+  locationAt,
+  restAction,
+  reviveAction,
+  reviveTargets,
+  rideChoices,
+  sailAction,
+  sellAction,
+  sellChoices,
+  type EquipSlot,
+} from './field-actions';
+import { applySettings, browserEnv } from './runtime';
+import { act, continueGame, newGame, session, subscribe, title } from './session';
 
-type Panel = 'none' | 'menu' | 'ask' | 'options' | 'shop' | 'party';
+type Panel = 'none' | 'menu' | 'ask' | 'options' | 'shop' | 'party' | 'travel' | 'ride' | 'revive' | 'equip' | 'use';
 
 let panel: Panel = 'none';
 let ask: KeywordId | null = null;
@@ -35,59 +55,17 @@ function patchSettings(patch: Partial<ReturnType<typeof settingsOf>>): void {
   }
 }
 
-function dist(ax: number, ay: number, bx: number, by: number): number {
-  return Math.max(Math.abs(ax - bx), Math.abs(ay - by));
-}
-
 function confirm(): void {
   const state = session.state;
   if (!state || state.mode !== 'field') return;
-  if (state.phase === 'intro') {
-    act({ type: 'start-battle', encounterId: 'opening' });
+  const action = confirmAction(state, ask);
+  if (!action) {
+    session.notice = ask ? `Ask ${KEYWORD_LABEL[ask]} of someone beside you.` : 'Nobody is close enough to hear you.';
+    draw();
     return;
   }
-  const here = state.mapId === 'world' ? { x: state.worldX, y: state.worldY } : { x: state.x, y: state.y };
-  if (ask) {
-    const npc = visibleNpcs(state).find((entry) => entry.mapId === state.mapId && dist(here.x, here.y, entry.x, entry.y) <= 1);
-    if (npc) {
-      const word = ask;
-      ask = null;
-      act({ type: 'talk', npcId: npc.id, keyword: word });
-      return;
-    }
-  }
-  const npc = visibleNpcs(state)
-    .filter((entry) => entry.mapId === state.mapId && dist(here.x, here.y, entry.x, entry.y) <= 1)
-    .sort((a, b) => dist(here.x, here.y, a.x, a.y) - dist(here.x, here.y, b.x, b.y))[0];
-  if (npc && state.mapId !== 'world') {
-    act({ type: 'talk', npcId: npc.id });
-    return;
-  }
-  const map = MAPS[state.mapId];
-  const chest = map?.chests.find((entry) => !state.chests.includes(entry.id) && dist(state.x, state.y, entry.x, entry.y) <= 1);
-  if (chest) {
-    act({ type: 'open-chest', chestId: chest.id });
-    return;
-  }
-  const stair = map?.stairs.find((entry) => dist(state.x, state.y, entry.x, entry.y) <= 1);
-  if (stair) {
-    act({ type: 'stairs' });
-    return;
-  }
-  if (map?.boss && dist(state.x, state.y, map.boss.x, map.boss.y) <= 1) {
-    act({ type: 'start-battle', encounterId: map.boss.encounterId });
-    return;
-  }
-  if (map && map.rows[state.y]?.[state.x] === 'e') {
-    act({ type: 'leave' });
-    return;
-  }
-  if (state.mapId === 'world' && state.worldX === 32 && state.worldY === 7) {
-    act({ type: 'board', ride: 'snowcraft' });
-    return;
-  }
-  session.notice = ask ? `Ask ${KEYWORD_LABEL[ask]} of someone beside you.` : 'Nobody is close enough to hear you.';
-  draw();
+  ask = null;
+  act(action);
 }
 
 function optionsBlock(): string {
@@ -140,18 +118,30 @@ function fieldBlock(): string {
   const state = session.state!;
   const power = rateEncounter(state, 'sergeant');
   const rating = state.phase === 'altair-wake' || state.phase === 'to-fynn' ? (power === 'ready' ? 'Ready for the mines' : 'Not yet ready for the mines') : '';
+  const place = locationAt(state);
+  const label = confirmLabel(state, ask);
+  const sail = state.phase !== 'intro' && rideChoices(state).some((action) => action.type === 'sail');
+  const inn = INNS[state.mapId];
+  const sanctuary = SANCTUARIES.includes(state.mapId);
   return `<p class="objective">${esc(state.objective)}</p>
     <p class="notice">${esc(session.notice)}</p>
+    ${place ? `<p class="hint">At ${esc(place.name)}. Enter goes inside.</p>` : ''}
     ${rating ? `<p class="rating">${rating}</p>` : ''}
     <div class="pad" aria-label="Movement">
       <button type="button" data-act="step" data-dx="0" data-dy="-1" aria-label="North">▲</button>
       <button type="button" data-act="step" data-dx="-1" data-dy="0" aria-label="West">◀</button>
-      <button type="button" data-act="confirm">Talk</button>
+      <button type="button" data-act="confirm">${esc(label)}</button>
       <button type="button" data-act="step" data-dx="1" data-dy="0" aria-label="East">▶</button>
       <button type="button" data-act="step" data-dx="0" data-dy="1" aria-label="South">▼</button>
     </div>
     <div class="grid">
       ${state.phase === 'intro' ? '<button type="button" data-act="fight">Fight</button>' : ''}
+      ${place ? `<button type="button" data-act="enter" data-location="${esc(place.id)}">Enter ${esc(place.name)}</button>` : ''}
+      ${state.phase !== 'intro' ? '<button type="button" data-act="travel">Travel</button>' : ''}
+      ${state.phase !== 'intro' ? '<button type="button" data-act="ride">Ride</button>' : ''}
+      ${sail ? '<button type="button" data-act="sail">Sail</button>' : ''}
+      ${inn ? `<button type="button" data-act="rest">Rest · ${inn.price} gil</button>` : ''}
+      ${sanctuary ? '<button type="button" data-act="revive-open">Revive</button>' : ''}
       <button type="button" data-act="menu">Menu</button>
       <button type="button" data-act="shop">Shop</button>
       <button type="button" data-act="ask">Ask</button>
@@ -173,7 +163,79 @@ function menuBlock(): string {
   const words = state.keywords.map((id) => KEYWORD_LABEL[id]).join(', ') || 'None yet';
   return `<section class="panel"><h2>Party</h2><ul>${rows}</ul><p>Keywords: ${esc(words)}</p>
     <p>Gil ${state.gil}</p>
+    <div class="grid">
+      <button type="button" data-act="equip-open">Equip</button>
+      <button type="button" data-act="use-open">Use</button>
+    </div>
     <button type="button" data-act="close">Close</button></section>`;
+}
+
+function travelBlock(): string {
+  const state = session.state!;
+  const buttons = journeyChoices(state)
+    .map((place) => `<button type="button" data-act="journey" data-location="${esc(place.locationId)}">${esc(place.name)}</button>`)
+    .join('');
+  return `<section class="panel"><h2>Travel</h2><p>The road you can walk, sail, or fly from here.</p><div class="grid">${buttons || '<p>No road is open from here.</p>'}</div><button type="button" data-act="close">Close</button></section>`;
+}
+
+function rideBlock(): string {
+  const state = session.state!;
+  const buttons = rideChoices(state)
+    .map((action) => {
+      if (action.type === 'sail') return `<button type="button" data-act="sail">Sail with Leila</button>`;
+      if (action.type === 'board') return `<button type="button" data-act="board" data-ride="${action.ride}">Board ${esc(action.ride)}</button>`;
+      if (action.type === 'mount-chocobo') return `<button type="button" data-act="mount">Mount chocobo</button>`;
+      if (action.type === 'dismount-chocobo') return `<button type="button" data-act="dismount">Dismount</button>`;
+      return '';
+    })
+    .join('');
+  return `<section class="panel"><h2>Ride</h2><div class="grid">${buttons || '<p>You are on foot. Vehicles appear here when you have them.</p>'}</div><button type="button" data-act="close">Close</button></section>`;
+}
+
+function reviveBlock(): string {
+  const state = session.state!;
+  const buttons = reviveTargets(state)
+    .map((id) => {
+      const member = state.party.find((entry) => entry.id === id);
+      return `<button type="button" data-act="revive" data-who="${esc(id)}">Raise ${esc(member?.name ?? id)} · 200 gil</button>`;
+    })
+    .join('');
+  return `<section class="panel"><h2>Sanctuary</h2><div class="grid">${buttons || '<p>No one here can be called back.</p>'}</div><button type="button" data-act="close">Close</button></section>`;
+}
+
+const SLOTS: EquipSlot[] = ['main', 'off', 'head', 'body', 'hands', 'accessory'];
+
+function equipBlock(): string {
+  const state = session.state!;
+  const rows = state.party
+    .map((member) => {
+      const lines = SLOTS.map((slot) => {
+        const worn = member.equip[slot];
+        const wornName = worn ? (GEAR_BY_ID[worn]?.name ?? worn) : 'empty';
+        const choices = equipChoices(state, member.id, slot)
+          .map((item) => `<button type="button" data-act="equip" data-who="${member.id}" data-slot="${slot}" data-item="${item.itemId}">${esc(member.name)} · ${slot} · ${esc(item.name)}</button>`)
+          .join('');
+        const clear = worn ? `<button type="button" data-act="equip" data-who="${member.id}" data-slot="${slot}" data-item="">Clear ${esc(member.name)} ${slot}</button>` : '';
+        return `<p>${esc(member.name)} ${slot}: ${esc(wornName)}</p><div class="grid">${choices}${clear}</div>`;
+      }).join('');
+      return lines;
+    })
+    .join('');
+  return `<section class="panel"><h2>Equip</h2>${rows}<button type="button" data-act="close">Close</button></section>`;
+}
+
+function useBlock(): string {
+  const state = session.state!;
+  const items = fieldUseChoices(state);
+  const buttons = items
+    .flatMap((item) =>
+      state.party.map(
+        (member) =>
+          `<button type="button" data-act="field-use" data-item="${item.itemId}" data-who="${member.id}">${esc(item.name)} ×${item.count} on ${esc(member.name)}</button>`,
+      ),
+    )
+    .join('');
+  return `<section class="panel"><h2>Use</h2><p>Tomes, medicine, Sunfire, and the Ultima Tome.</p><div class="grid">${buttons || '<p>Nothing in the pack works in the field.</p>'}</div><button type="button" data-act="close">Close</button></section>`;
 }
 
 function askBlock(): string {
@@ -221,7 +283,14 @@ export function draw(): void {
   if (panel === 'options') hud.innerHTML = optionsBlock();
   else if (panel === 'menu') hud.innerHTML = menuBlock();
   else if (panel === 'ask') hud.innerHTML = askBlock();
-  else if (panel === 'shop') hud.innerHTML = shopBlockHtml(state);
+  else if (panel === 'shop') {
+    hud.innerHTML = shopBlockHtml(state);
+    fillStock();
+  } else if (panel === 'travel') hud.innerHTML = travelBlock();
+  else if (panel === 'ride') hud.innerHTML = rideBlock();
+  else if (panel === 'revive') hud.innerHTML = reviveBlock();
+  else if (panel === 'equip') hud.innerHTML = equipBlock();
+  else if (panel === 'use') hud.innerHTML = useBlock();
   else hud.innerHTML = fieldBlock();
 }
 
@@ -229,9 +298,14 @@ function shopBlockHtml(state: NonNullable<typeof session.state>): string {
   const shops = SHOPS.filter((shop) => shop.town === state.mapId);
   if (!shops.length) return `<section class="panel"><p>No counter here. Town shops are marked by the shopkeeper.</p><button type="button" data-act="close">Close</button></section>`;
   if (!shops.some((shop) => shop.id === shopId)) shopId = shops[0].id;
-  return `<section class="panel"><h2>Shop · ${state.gil} gil</h2><p>Open a counter, then buy. Talk is not required.</p>
+  const selling = sellChoices(state, shopId)
+    .map((item) => `<button type="button" data-act="sell" data-shop="${shopId}" data-item="${item.itemId}">Sell ${esc(item.name)} · ${item.price}</button>`)
+    .join('');
+  return `<section class="panel"><h2>Shop · ${state.gil} gil</h2><p>Open a counter, then buy or sell. Talk is not required.</p>
     <div class="grid">${shops.map((shop) => `<button type="button" data-act="counter" data-shop="${shop.id}">${esc(shop.kind)}</button>`).join('')}</div>
     <div class="grid" id="stock"></div>
+    <h3>Sell</h3>
+    <div class="grid">${selling || '<p>Nothing you carry can be sold here.</p>'}</div>
     <button type="button" data-act="close">Close</button></section>`;
 }
 
@@ -315,6 +389,83 @@ export function mountHud(): void {
     }
     if (kind === 'buy' && button.dataset.shop && button.dataset.item) {
       act({ type: 'buy', shopId: button.dataset.shop, itemId: button.dataset.item });
+      return;
+    }
+    if (kind === 'sell' && button.dataset.shop && button.dataset.item) {
+      act(sellAction(button.dataset.shop, button.dataset.item));
+      return;
+    }
+    if (kind === 'travel') {
+      panel = 'travel';
+      draw();
+      return;
+    }
+    if (kind === 'ride') {
+      panel = 'ride';
+      draw();
+      return;
+    }
+    if (kind === 'journey' && button.dataset.location) {
+      panel = 'none';
+      act(journeyAction(button.dataset.location));
+      return;
+    }
+    if (kind === 'enter' && button.dataset.location) {
+      panel = 'none';
+      act(enterAction(button.dataset.location));
+      return;
+    }
+    if (kind === 'board' && button.dataset.ride) {
+      panel = 'none';
+      act(boardAction(button.dataset.ride));
+      return;
+    }
+    if (kind === 'sail') {
+      panel = 'none';
+      act(sailAction());
+      return;
+    }
+    if (kind === 'mount') {
+      panel = 'none';
+      act({ type: 'mount-chocobo' });
+      return;
+    }
+    if (kind === 'dismount') {
+      panel = 'none';
+      act({ type: 'dismount-chocobo' });
+      return;
+    }
+    if (kind === 'rest') {
+      const action = session.state ? restAction(session.state) : null;
+      if (action) act(action);
+      return;
+    }
+    if (kind === 'revive-open') {
+      panel = 'revive';
+      draw();
+      return;
+    }
+    if (kind === 'revive' && button.dataset.who && session.state) {
+      act(reviveAction(session.state.mapId, button.dataset.who));
+      return;
+    }
+    if (kind === 'equip-open') {
+      panel = 'equip';
+      draw();
+      return;
+    }
+    if (kind === 'use-open') {
+      panel = 'use';
+      draw();
+      return;
+    }
+    if (kind === 'equip' && button.dataset.who && button.dataset.slot) {
+      const itemId = button.dataset.item ? button.dataset.item : null;
+      act(equipAction(button.dataset.who, button.dataset.slot as EquipSlot, itemId));
+      return;
+    }
+    if (kind === 'field-use' && button.dataset.item) {
+      act(fieldUseAction(button.dataset.item, button.dataset.who));
       return;
     }
     if (kind === 'save') {

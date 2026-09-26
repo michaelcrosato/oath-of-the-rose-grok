@@ -1,13 +1,10 @@
 import * as Phaser from 'phaser';
 import harbor from '../assets/title-harbor.jpg';
-import { MAPS, terrainAt, visibleNpcs } from '../engine';
+import { LOCATIONS, MAPS, WORLD_H, WORLD_W, terrainAt, visibleNpcs } from '../engine';
 import { audio } from './audio';
+import { VIEW_H, VIEW_W, cameraScroll, tilePixels } from './field-scale';
 import { INPUT_BINDINGS } from './runtime';
 import { act, session } from './session';
-
-const TILE = 16;
-const VIEW_W = 960;
-const VIEW_H = 540;
 
 const COLORS: Record<string, number> = {
   g: 0x3d6b45,
@@ -74,6 +71,7 @@ export class PlayScene extends Phaser.Scene {
   private gfx!: Phaser.GameObjects.Graphics;
   private labels!: Phaser.GameObjects.Container;
   private seen = -1;
+  private tile = 60;
   private keys: Record<string, Phaser.Input.Keyboard.Key> = {};
 
   constructor() {
@@ -94,10 +92,14 @@ export class PlayScene extends Phaser.Scene {
     }
     this.input.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
       if (!session.state || session.state.mode === 'battle' || session.state.mode === 'ending') return;
-      const tileX = Math.floor(pointer.worldX / TILE);
-      const tileY = Math.floor(pointer.worldY / TILE);
-      if (session.state.mapId === 'world') act({ type: 'travel-tile', x: tileX, y: tileY });
-      else act({ type: 'move-to', x: tileX, y: tileY });
+      const tileX = Math.floor(pointer.worldX / this.tile);
+      const tileY = Math.floor(pointer.worldY / this.tile);
+      if (session.state.mapId === 'world') {
+        const standing = session.state.worldX === tileX && session.state.worldY === tileY;
+        const place = LOCATIONS.find((entry) => entry.x === tileX && entry.y === tileY);
+        if (standing && place) act({ type: 'enter', locationId: place.id });
+        else act({ type: 'travel-tile', x: tileX, y: tileY });
+      } else act({ type: 'move-to', x: tileX, y: tileY });
     });
     this.redraw();
   }
@@ -158,6 +160,7 @@ export class PlayScene extends Phaser.Scene {
     this.seen = session.revision;
     this.gfx.clear();
     this.labels.removeAll(true);
+    this.cameras.main.setZoom(1);
     const state = session.state;
     if (!state) return;
     if (state.mode === 'battle' && state.battle) this.drawBattle();
@@ -168,51 +171,65 @@ export class PlayScene extends Phaser.Scene {
 
   private drawField(): void {
     const state = session.state!;
+    this.cameras.main.setZoom(1);
     if (state.mapId === 'world') {
-      const radiusX = 30;
-      const radiusY = 17;
-      for (let y = state.worldY - radiusY; y <= state.worldY + radiusY; y++) {
-        for (let x = state.worldX - radiusX; x <= state.worldX + radiusX; x++) {
+      const tile = tilePixels(WORLD_W, WORLD_H);
+      this.tile = tile;
+      this.cameras.main.setBackgroundColor(0x1a4068);
+      for (let y = 0; y < WORLD_H; y++) {
+        for (let x = 0; x < WORLD_W; x++) {
           const terrain = terrainAt(x, y);
-          this.gfx.fillStyle(COLORS[terrain] ?? 0x140e18, 1);
-          this.gfx.fillRect(x * TILE, y * TILE, TILE, TILE);
-          if (terrain === 'g' || terrain === 'f') {
-            this.gfx.fillStyle(0x2a2018, 0.25);
-            this.gfx.fillRect(x * TILE, y * TILE + 12, TILE, 4);
-          }
+          this.gfx.fillStyle(COLORS[terrain] ?? 0x1a4068, 1);
+          this.gfx.fillRect(x * tile, y * tile, tile + 1, tile + 1);
         }
       }
-      this.person(state.worldX, state.worldY, WHO.firion, 'You');
-      this.cameras.main.centerOn(state.worldX * TILE + 8, state.worldY * TILE + 8);
+      for (const place of LOCATIONS) {
+        this.gfx.fillStyle(0xc44868, 1);
+        const pad = Math.max(8, Math.floor(tile * 0.45));
+        const inset = Math.floor((tile - pad) / 2);
+        this.gfx.fillRect(place.x * tile + inset, place.y * tile + inset, pad, pad);
+      }
+      this.person(state.worldX, state.worldY, WHO.firion, 'You', tile);
+      const scroll = cameraScroll(state.worldX * tile + tile / 2, state.worldY * tile + tile / 2, WORLD_W * tile, WORLD_H * tile);
+      this.cameras.main.setScroll(scroll.x, scroll.y);
       return;
     }
     const map = MAPS[state.mapId];
     if (!map) return;
+    const tile = tilePixels(map.w, map.h);
+    this.tile = tile;
+    this.cameras.main.setBackgroundColor(0x6e6258);
     for (let y = 0; y < map.h; y++) {
       for (let x = 0; x < map.w; x++) {
         const ch = map.rows[y][x];
         this.gfx.fillStyle(COLORS[ch] ?? COLORS['.'], 1);
-        this.gfx.fillRect(x * TILE, y * TILE, TILE, TILE);
+        this.gfx.fillRect(x * tile, y * tile, tile + 1, tile + 1);
       }
     }
     for (const npc of visibleNpcs(state).filter((entry) => entry.mapId === state.mapId)) {
-      this.person(npc.x, npc.y, 0xe0b060, npc.name);
+      this.person(npc.x, npc.y, 0xe0b060, npc.name, tile);
     }
-    this.person(state.x, state.y, WHO.firion, 'You');
+    this.person(state.x, state.y, WHO.firion, 'You', tile);
     const followers = state.party.filter((c) => c.id !== 'firion' && !c.dead);
-    followers.forEach((member, index) => this.person(state.x - 1 - (index % 2), state.y + Math.floor(index / 2), WHO[member.id] ?? 0xf0d8b0, member.name));
-    this.cameras.main.centerOn(state.x * TILE + 8, state.y * TILE + 8);
+    followers.forEach((member, index) =>
+      this.person(state.x - 1 - (index % 2), state.y + Math.floor(index / 2), WHO[member.id] ?? 0xf0d8b0, member.name, tile),
+    );
+    const scroll = cameraScroll(state.x * tile + tile / 2, state.y * tile + tile / 2, map.w * tile, map.h * tile);
+    this.cameras.main.setScroll(scroll.x, scroll.y);
   }
 
-  private person(x: number, y: number, color: number, name: string): void {
-    this.gfx.fillStyle(0x140e18, 1);
-    this.gfx.fillRect(x * TILE + 3, y * TILE + 2, 10, 13);
+  private person(x: number, y: number, color: number, name: string, tile: number): void {
+    const body = Math.max(10, Math.floor(tile * 0.55));
+    const ox = x * tile + Math.floor((tile - body) / 2);
+    const oy = y * tile + Math.floor(tile * 0.2);
+    this.gfx.fillStyle(0x3a3050, 1);
+    this.gfx.fillRect(ox - 2, oy - 2, body + 4, body + Math.floor(tile * 0.25));
     this.gfx.fillStyle(color, 1);
-    this.gfx.fillRect(x * TILE + 4, y * TILE + 3, 8, 8);
-    this.gfx.fillRect(x * TILE + 5, y * TILE + 11, 6, 3);
-    const label = this.add.text(x * TILE + 8, y * TILE - 8, name, {
+    this.gfx.fillRect(ox, oy, body, body);
+    this.gfx.fillRect(ox + Math.floor(body * 0.15), oy + body, Math.floor(body * 0.7), Math.floor(tile * 0.18));
+    const label = this.add.text(x * tile + tile / 2, y * tile + 2, name, {
       fontFamily: 'ui-monospace, monospace',
-      fontSize: '10px',
+      fontSize: '16px',
       color: '#f0d8b0',
     }).setOrigin(0.5, 1);
     this.labels.add(label);

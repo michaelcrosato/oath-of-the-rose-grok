@@ -23,4 +23,4 @@ The objective stays on screen. Growth is announced and stats do not fall. You do
 
 ## How to play
 
-New Game. On the Fynn road, choose Fight. You are meant to lose. In Altair, learn Wild Rose and say it to Hilda. The objective line is the route. Talk, Ask, the pad, and Menu are enough on a phone. Keyboard, mouse, and a standard gamepad do the same things.
+New Game. On the Fynn road, choose Fight. You are meant to lose. In Altair, learn Wild Rose and say it to Hilda. The objective line is the route. Talk enters a place you are standing on, opens a chest, takes stairs, rests at an innkeeper, and raises the dead at a priest. Travel lists every place the road, ship, snowcraft, or airship can reach. Ride boards those vehicles, and Sail starts Leila's voyage. Menu covers Equip and Use (tomes, medicine, Sunfire, the Ultima Tome). The shop sells as well as buys. Keyboard, mouse, and a standard gamepad do the same things.
