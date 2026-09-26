@@ -7,6 +7,7 @@ import {
   createNewGame,
   dispatch,
   shopGoods,
+  terrainAt,
   type GameState,
 } from '../src/engine';
 import { equipAction, fieldUseAction, restAction, rideChoices } from '../src/game/field-actions';
@@ -216,6 +217,8 @@ function dreadnought(state: GameState) {
   must(state, lift!);
   expect(state.ride).toBe('airship');
   expect(state.mapId).toBe('world');
+  expect(state.vehicles.ship).toBe(false);
+  flyAcross(state, 0, 0, 'w');
 }
 
 function leviathan(state: GameState) {
@@ -239,6 +242,30 @@ function leviathan(state: GameState) {
   expect(state.vehicles.ship).toBe(true);
   expect(canReach(state, 'castle-deist')).toBe(true);
   expect(state.party.some((c) => c.id === 'gordon')).toBe(true);
+  flyAcross(state, 37, 2, 'm');
+}
+
+function flyAcross(state: GameState, x: number, y: number, terrain: string) {
+  expect(state.vehicles.airship).toBe(true);
+  expect(terrainAt(x, y)).toBe(terrain);
+  if (state.ride !== 'airship') {
+    const lift = rideChoices(state).find((action) => action.type === 'board' && action.ride === 'airship');
+    expect(lift).toEqual({ type: 'board', ride: 'airship' });
+    must(state, lift!);
+  }
+  must(state, { type: 'travel-tile', x, y });
+  expect(state.mapId).toBe('world');
+  expect(state.worldX).toBe(x);
+  expect(state.worldY).toBe(y);
+  expect(state.ride).toBe('airship');
+  const stepped = dispatch(state, { type: 'step', dx: 1, dy: 0 });
+  expect(stepped.ok).toBe(true);
+  expect(state.ride).toBe('airship');
+  expect(state.worldX !== x || state.worldY !== y).toBe(true);
+  expect(canReach(state, 'poft')).toBe(true);
+  must(state, { type: 'journey', locationId: 'poft' });
+  expect(state.ride).toBe('foot');
+  expect(state.worldX).not.toBe(x);
 }
 
 function fynnFree(state: GameState) {

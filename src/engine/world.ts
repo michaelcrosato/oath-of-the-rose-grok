@@ -722,7 +722,9 @@ export function travelToTile(state: GameState, x: number, y: number): ActionResu
   state.mapId = 'world';
   state.worldX = x;
   state.worldY = y;
-  state.ride = state.chocoboMounted ? 'chocobo' : node.ride === 'airship' ? 'foot' : node.ride;
+  if (state.chocoboMounted) state.ride = 'chocobo';
+  else if (node.ride === 'airship' && !canLand(terrainAt(x, y))) state.ride = 'airship';
+  else state.ride = node.ride === 'airship' ? 'foot' : node.ride;
   return ok(['You travel.']);
 }
 
